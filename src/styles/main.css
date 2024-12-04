@@ -2,14 +2,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 2rem);
   color: #ffffff;
   background-color: #e3f2fd;
   padding: 1rem;
 }
 
 .container {
-  width: 48.75rem;
+  width: 100%;
+  max-width: 48.75rem;
   border-radius: 20px;
   padding: 2rem 2.5rem;
   background-color: #020205;
@@ -115,3 +116,23 @@ body {
 }
 
 .piano-keys .key.hide span {display: none;}
+
+/*  */
+.content,
+.rotate-message {display: none;}
+
+/* ====== media queries ====== */
+@media (max-width: 767px) and (orientation: portrait) {
+  body {
+    color: #020205;
+    flex-direction: column;
+  }
+
+  .container {display: none;}
+
+  .content {display: block;}
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .container {display: block;}
+}
