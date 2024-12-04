@@ -4,8 +4,10 @@ const keysCheck = document.querySelector('.keys-check input');
 
 let mappedKeys = [];
 let audio = new Audio();
+let isPianoOn = true;
 
 const playTune = (keyValue) => {
+  if (!isPianoOn) return;
   audio.src = `src/assets/tunes/${keyValue}.wav`;
 
   try {
@@ -36,16 +38,14 @@ const handleVolume = (event) => {
 }
 
 const showHideKeys = () => {
+  isPianoOn = !isPianoOn;
   pianoKeys.forEach(key => {
     key.classList.toggle('hide');
-
-    if (key.classList.contains('hide')) {
-      audio.pause();
-      audio.volume = 0;
-    } else {
-      audio.volume = 0.5;
-    }
   });
+
+  if (!isPianoOn && !audio.paused) {
+    audio.pause(); 
+  }
 }
 
 volumeSlider.addEventListener('input', handleVolume);
