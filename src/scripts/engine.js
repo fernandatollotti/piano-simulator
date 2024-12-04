@@ -42,6 +42,8 @@ const showHideKeys = () => {
     if (key.classList.contains('hide')) {
       audio.pause();
       audio.volume = 0;
+    } else {
+      audio.volume = 0.5;
     }
   });
 }
