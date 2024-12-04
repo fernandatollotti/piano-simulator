@@ -11,7 +11,7 @@ const playTune = (keyValue) => {
   try {
     audio.play();
   } catch(error) {
-    alert(error.message);
+    console.error('Error playing audio:', error.message);
   }
 
   const clickedKey = document.querySelector(`[data-key="${keyValue}"]`);
