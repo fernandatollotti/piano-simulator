@@ -104,12 +104,12 @@ body {
   font-size: 1.125rem;
 }
 
-.piano-keys .white:active {
+.piano-keys .white.active {
   box-shadow: inset -5px 5px 20px rgba(2, 2, 5, 0.2);
   background: linear-gradient(to bottom #f2f2f2 0%, #eeeeee 100%);
 }
 
-.piano-keys .black:active {
+.piano-keys .black.active {
   box-shadow: inset -5px 5px 20px rgba(242, 242, 242, 0.1);
   background: linear-gradient(to bottom #020205 0%, #434343 100%);
 }
