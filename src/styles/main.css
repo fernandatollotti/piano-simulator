@@ -113,3 +113,5 @@ body {
   box-shadow: inset -5px 5px 20px rgba(242, 242, 242, 0.1);
   background: linear-gradient(to bottom #020205 0%, #434343 100%);
 }
+
+.piano-keys .key.hide span {display: none;}
