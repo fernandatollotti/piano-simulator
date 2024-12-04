@@ -10,9 +10,18 @@ const playTune = (keyValue) => {
   } catch(error) {
     alert(error.message);
   }
+
+  const clickedKey = document.querySelector(`[data-key="${keyValue}"]`);
+  clickedKey.classList.add('active');
+
+  setTimeout(() => {clickedKey.classList.remove('active')}, 150);
 }
 
 pianoKeys.forEach(key => {
   const dataKey = key.dataset.key;
   key.addEventListener('click', () => playTune(dataKey));
+});
+
+document.addEventListener('keydown', event => {
+  playTune(event.key);
 });
